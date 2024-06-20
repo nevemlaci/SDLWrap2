@@ -1,0 +1,2 @@
+include/** linguist-vendored
+*.hpp linguist-language=C++

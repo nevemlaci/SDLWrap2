@@ -21,6 +21,8 @@ add_library(SDLWrap2 STATIC
         src/cppSDL.hpp
         src/cppSDLEvent.cpp
         src/cppSDLEvent.hpp
+        src/cppSDLWindow.cpp
+        src/cppSDLWindow.hpp
 )
 
 set_target_properties(SDLWrap2 PROPERTIES VS_DEBUGGER_ENVIRONMENT "${MY_PATH}")

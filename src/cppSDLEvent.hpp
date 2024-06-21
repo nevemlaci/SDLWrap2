@@ -7,29 +7,21 @@
 #include <SDL3/SDL.h>
 
 namespace SDL{
-
-    class EventType final{
-        friend bool operator=(uint32_t e1, EventType e2);
-        friend bool operator=( EventType e2, uint32_t e1);
-        SDL_EventType m_type;
-    public:
-        EventType(SDL_EventType type);
-    };
-
-
-
-    class Event final {
+    class Event final{
         SDL_Event m_event;
+
     public:
         Event() = default;
+
         /**
          * @brief Get the type of the event
          * @return event type as a 32 bit uint. Compare with an SDL_EventType.
          */
-        [[nodiscard]] uint32_t GetType() const {
+        [[nodiscard]] uint32_t GetType() const{
             return m_event.type;
         };
-        
+
+
         /**
          * @brief Get the underlying SDL_Event union
          * @return underlying SDL_Event union
@@ -37,19 +29,18 @@ namespace SDL{
         [[nodiscard]] const SDL_Event& GetEvent() const{
             return m_event;
         }
-        
+
         /**
          * @brief Poll for currently pending events.
          * @return 1 if there is a pending event or 0 if there are none available.
          */
         int Poll();
-        
+
         /**
          * @brief Check if the event queue is empty
          * @return
          */
         static bool IsQueueEmpty();
-
     };
 }
 

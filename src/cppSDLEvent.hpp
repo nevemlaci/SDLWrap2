@@ -7,13 +7,24 @@
 #include <SDL3/SDL.h>
 
 namespace SDL{
+
+    class EventType final{
+        friend bool operator=(uint32_t e1, EventType e2);
+        friend bool operator=( EventType e2, uint32_t e1);
+        SDL_EventType m_type;
+    public:
+        EventType(SDL_EventType type);
+    };
+
+
+
     class Event final {
         SDL_Event m_event;
     public:
         Event() = default;
         /**
          * @brief Get the type of the event
-         * @return event type as a 32 bit uint. Check equality with an SDL_EventType.
+         * @return event type as a 32 bit uint. Compare with an SDL_EventType.
          */
         [[nodiscard]] uint32_t GetType() const {
             return m_event.type;

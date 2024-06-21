@@ -15,12 +15,12 @@ add_library(SDLWrap2 STATIC
         src/cppSDLEvent.hpp
 )
 
-target_link_libraries(SDLWrap2 PRIVATE ${LIBRARY_DIR}/libSDL2.dll.a)
+target_link_libraries(SDLWrap2 PRIVATE ${LIBRARY_DIR}/SDL3.dll)
 
 #add test build target
 add_executable(LibraryTest test/test.cpp)
 
-target_link_libraries(LibraryTest PRIVATE ${LIBRARY_DIR}/libSDL2.dll.a)
+target_link_libraries(LibraryTest PRIVATE ${LIBRARY_DIR}/SDL3.dll)
 
 #link lib to test
 target_link_libraries(LibraryTest PRIVATE SDLWrap2)

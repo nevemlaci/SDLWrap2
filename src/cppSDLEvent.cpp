@@ -4,6 +4,7 @@
 
 #include "cppSDLEvent.hpp"
 
+
 int SDL::Event::Poll(){
     return SDL_PollEvent(&m_event);
 }

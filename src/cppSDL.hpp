@@ -5,12 +5,12 @@
 #ifndef SDLWRAP2_CPPSDL_HPP
 #define SDLWRAP2_CPPSDL_HPP
 
-#include <SDL2/SDL.h>
+#include <SDL3//SDL.h>
 #include "cppSDLEvent.hpp"
 
 namespace SDL{
-    
-    
+    inline constexpr uint32_t SDL_INIT_EVERYTHING = SDL_INIT_AUDIO | SDL_INIT_VIDEO | SDL_INIT_TIMER | SDL_INIT_CAMERA | SDL_INIT_EVENTS | SDL_INIT_HAPTIC | SDL_INIT_SENSOR | SDL_INIT_GAMEPAD | SDL_INIT_JOYSTICK ;
+
     /**
      * @brief Initializes SDL subsystems
      * @param flags SDL Initialization flag or multiple flags bitor'd together. Default: SDL_INIT_EVERYTHING
